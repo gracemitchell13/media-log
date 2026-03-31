@@ -272,7 +272,7 @@ button{padding:8px 16px;border:0.5px solid rgba(0,0,0,.2);border-radius:8px;font
       <span style="display:flex;align-items:center;gap:4px;font-size:12px;color:#666"><span style="width:9px;height:9px;border-radius:2px;background:#4A5A80;display:inline-block"></span>Done</span>
       <span style="display:flex;align-items:center;gap:4px;font-size:12px;color:#666"><span style="width:9px;height:9px;border-radius:2px;background:#6A7898;display:inline-block"></span>Now</span>
       <span style="display:flex;align-items:center;gap:4px;font-size:12px;color:#666"><span style="width:9px;height:9px;border-radius:2px;background:#D8D6CC;display:inline-block"></span>Backlog</span>
-      <span style="display:flex;align-items:center;gap:4px;font-size:12px;color:#666"><span style="width:9px;height:9px;border-radius:2px;background:#6A3030;display:inline-block"></span>DNF</span>
+      <span style="display:flex;align-items:center;gap:4px;font-size:12px;color:#666"><span style="width:9px;height:9px;border-radius:2px;background:#C4477A;display:inline-block"></span>DNF</span>
     </div>
   </div>
   <div class="acrd">
@@ -345,7 +345,7 @@ var SM={
   consuming:{l:'In progress',bg:'#2C3A58',tx:'#fff'},
   backlog:  {l:'Backlog',    bg:'#888780',tx:'#fff'},
   completed:{l:'Completed',  bg:'#2C3A5A',tx:'#fff'},
-  dnf:      {l:'DNF',        bg:'#6A3030',tx:'#fff'}
+  dnf:      {l:'DNF',        bg:'#C4477A',tx:'#fff'}
 };
 
 var data=[],selR=0,fType='all',fStatus='all',editId=null,imgCache={};
@@ -663,7 +663,7 @@ function render(){
         +'<div style="width:'+Math.round(dn/tot*100)+'%;height:100%;background:'+c.dot+'"></div>'
         +'<div style="width:'+Math.round(nw/tot*100)+'%;height:100%;background:'+c.hd+';opacity:.6"></div>'
         +'<div style="width:'+Math.round(bl/tot*100)+'%;height:100%;background:'+c.hd+';opacity:.25"></div>'
-        +'<div style="width:'+Math.round(df/tot*100)+'%;height:100%;background:#6A3030;opacity:.7"></div>'
+        +'<div style="width:'+Math.round(df/tot*100)+'%;height:100%;background:#C4477A;opacity:.7"></div>'
       +'</div>'
       +'<div style="font-size:11px;color:'+c.tx+';opacity:.75;margin-top:4px">'+(a2!=='—'?'★ '+a2+' · ':'')+dn+' done</div>'
     +'</div>';
@@ -685,7 +685,7 @@ function render(){
         +'<div style="width:'+Math.round(dn/maxC*100)+'%;height:100%;background:#4A5A80"></div>'
         +'<div style="width:'+Math.round(nw/maxC*100)+'%;height:100%;background:#4A5A80"></div>'
         +'<div style="width:'+Math.round(bl/maxC*100)+'%;height:100%;background:#D8D6CC"></div>'
-        +'<div style="width:'+Math.round(df/maxC*100)+'%;height:100%;background:#6A3030;opacity:.8"></div>'
+        +'<div style="width:'+Math.round(df/maxC*100)+'%;height:100%;background:#C4477A;opacity:.8"></div>'
       +'</div>'
       +'<div style="width:22px;font-size:13px;color:#666">'+tot+'</div></div>';
   });
@@ -789,7 +789,7 @@ function render(){
   var ch='';
   f.forEach(function(e){
     var c=CATS[e.type],s=SM[e.status];
-    var dnfS=e.status==='dnf'?'repeating-linear-gradient(45deg,transparent,transparent 4px,rgba(122,48,48,.12) 4px,rgba(122,48,48,.12) 8px)':'';
+    var dnfS=e.status==='dnf'?'repeating-linear-gradient(45deg,transparent,transparent 4px,rgba(196,71,122,.12) 4px,rgba(196,71,122,.12) 8px)':'';
     var cached=imgCache[e.id];
     var ti=cached?'<img class="cthumb" src="'+cached+'" onerror="this.style.display=\'none\'">':'<span style="font-size:34px">'+c.e+'</span>';
     ch+='<div class="sc">'
