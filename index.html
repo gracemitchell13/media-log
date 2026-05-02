@@ -430,9 +430,11 @@ imgCache[e.id]=null;cb(null);
 }
 }
 function applyThumb(id,src){
+var entry=data.filter(function(x){return x.id===id;})[0];
+var musicClass=(entry&&entry.type==='music')?' cthumb-music':'';
 ['th-','tp-'].forEach(function(p){
 var el=document.getElementById(p+id);
-if(el&&src)el.innerHTML='<img class="cthumb" src="'+src+'" onerror="this.style.display=\'none\'">';
+if(el&&src)el.innerHTML='<img class="cthumb'+musicClass+'" src="'+src+'" onerror="this.style.display=\'none\'">';
 });
 }
 function st(n,sz){
